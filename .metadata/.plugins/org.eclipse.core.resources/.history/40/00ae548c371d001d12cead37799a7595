@@ -1,0 +1,17 @@
+package com.project.quanlybanhang.pojo;
+
+public class Product {
+private int id;
+	
+	private String productName;	
+	private String productAvatar;
+	private float productPrice;	
+	private int producType;	
+	private String productDescription;	
+	private String productScreenType;	
+	private String productScreenSize;	
+	private String productFrontCamere;
+	private String productBackCamera;	
+	private String productProducer;
+	private String productStatus;
+}

@@ -1,0 +1,15 @@
+package com.project.quanlybanhang_api.service;
+
+import java.util.List;
+
+import com.project.quanlybanhang_api.entity.Product;
+
+public class ProductService implements ProductServiceImp{
+
+	@Override
+	public List<Product> findProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,107 @@
+package com.project.quanlybanhang_api.entity;
+
+import java.util.Date;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity( name = "customer")
+public class Customer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@OneToMany(mappedBy = "customer")
+	private Set<Cart> carts;
+	
+	
+	@Column( name = "customer_name")
+	private String customerName;
+	
+	@Column( name = "phone_number")
+	private int phoneNumber;
+	
+	@Column( name = "customer_address")
+	private String customerAddress;
+	
+	@Column( name = "gender")
+	private int gender;
+	
+	@Column( name = "birthofday")
+	private Date birthOfDay;
+	
+	@Column( name = "status")
+	private int status;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Set<Cart> getCarts() {
+		return carts;
+	}
+
+	public void setCarts(Set<Cart> carts) {
+		this.carts = carts;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+
+	public int getGender() {
+		return gender;
+	}
+
+	public void setGender(int gender) {
+		this.gender = gender;
+	}
+
+	public Date getBirthOfDay() {
+		return birthOfDay;
+	}
+
+	public void setBirthOfDay(Date birthOfDay) {
+		this.birthOfDay = birthOfDay;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	
+	
+}

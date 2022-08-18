@@ -1,0 +1,145 @@
+package com.project.quanlybanhang_api.entity;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity( name = "product")
+public class Product {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@OneToMany(mappedBy = "product")
+	private Set<Cart> carts;
+	
+	@Column( name = "product_name")
+	private String productName;
+	
+	@Column( name = "product_avatar")
+	private String productAvatar;
+	
+	@Column( name = "product_price")
+	private float productPrice;
+	
+	@Column( name = "product_type")
+	private int producType;
+	
+	@Column( name = "product_description")
+	private String productDescription;
+	
+	@Column( name = "product_screenType")
+	private String productScreenType;
+	
+	@Column( name = "product_description")
+	private String productScreenSize;
+	
+	@Column( name = "product_front_camere")
+	private String productFrontCamere;
+	
+	@Column( name = "product_back_camera")
+	private String productBackCamera;
+	
+	@Column( name = "product_producer")
+	private String productProducer;
+	
+	@Column(name = "product_status")
+	private String productStatus;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Set<Cart> getCarts() {
+		return carts;
+	}
+
+	public void setCarts(Set<Cart> carts) {
+		this.carts = carts;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductAvatar() {
+		return productAvatar;
+	}
+
+	public void setProductAvatar(String productAvatar) {
+		this.productAvatar = productAvatar;
+	}
+
+	public float getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(float productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public int getProducType() {
+		return producType;
+	}
+
+	public void setProducType(int producType) {
+		this.producType = producType;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	public String getProductFrontCamere() {
+		return productFrontCamere;
+	}
+
+	public void setProductFrontCamere(String productFrontCamere) {
+		this.productFrontCamere = productFrontCamere;
+	}
+
+	public String getProductBackCamera() {
+		return productBackCamera;
+	}
+
+	public void setProductBackCamera(String productBackCamera) {
+		this.productBackCamera = productBackCamera;
+	}
+
+	public String getProductProducer() {
+		return productProducer;
+	}
+
+	public void setProductProducer(String productProducer) {
+		this.productProducer = productProducer;
+	}
+
+	public String getProductStatus() {
+		return productStatus;
+	}
+
+	public void setProductStatus(String productStatus) {
+		this.productStatus = productStatus;
+	}
+	
+	
+	
+}
