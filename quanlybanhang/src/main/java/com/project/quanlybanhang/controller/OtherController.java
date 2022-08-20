@@ -14,17 +14,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.quanlybanhang.pojo.Product;
 
 @Controller
-@RequestMapping("/home")
-public class HomeController {
+@RequestMapping("/other")
+public class OtherController {
 
-	
 	@GetMapping("")
 	public ModelAndView home(HttpServletRequest request){
-		ModelAndView andView = new ModelAndView("home");
+		ModelAndView andView = new ModelAndView("other");
 		String respone;
 		try {
 			respone = getDataTypeGet("http://localhost:8080/product/list");
