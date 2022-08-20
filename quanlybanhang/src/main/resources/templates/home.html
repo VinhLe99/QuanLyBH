@@ -69,11 +69,11 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="home.html">Home</a></li>
-                        <li><a href="phone.html">Phone</a></li>
-                        <li><a href="tablet.html">Tablet</a></li>
-                        <li><a href="laptop.html">Laptop</a></li>
-                        <li><a href="other.html">Other</a></li>
+                        <li class="active"><a th:href="@{/home}">Home</a></li>
+                        <li><a th:href="@{/home}">Phone</a></li>
+                        <li><a th:href="@{/home}">Tablet</a></li>
+                        <li><a th:href="@{/home}">Laptop</a></li>
+                        <li><a th:href="@{/other}">Other</a></li>
                     </ul>
                 </div>  
             </div>
@@ -168,7 +168,7 @@
                         <div class="product-carousel" >
                             <div class="single-product" th:each="product : ${products}">
                                 <div class="product-f-image">
-                                    <img src="assets/img/product-1.jpg" alt="">
+                                    <img th:src="@{http://localhost:8080/file/} + ${product.getProductAvatar()}" alt=""/>
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -178,8 +178,8 @@
                                 <h2><a href="single-product.html" ></a></h2>
                                 
                                 <div class="product-carousel-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
-                                    <h3 class="card-title" th:utext="${product.getProductName()}"></h3>
+                                	<h2 th:utext="${product.getProductName()}"></h2><br/>
+                                    <ins th:utext="${product.getProductPrice()}"></ins>                                    
                                 </div> 
                             </div>
                         </div>
