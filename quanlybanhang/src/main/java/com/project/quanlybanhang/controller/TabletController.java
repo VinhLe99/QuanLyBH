@@ -19,16 +19,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.quanlybanhang.pojo.Product;
 
 @Controller
-@RequestMapping("/phone")
-public class PhoneController {
+@RequestMapping("/tablet")
+public class TabletController {
 	
 	@GetMapping("")
 	public ModelAndView home(HttpServletRequest request){
-		ModelAndView andView = new ModelAndView("phone");
+		ModelAndView andView = new ModelAndView("tablet");
 		String respone;
 		try {
-			//list tablet type=1
-			respone = getDataTypeGet("http://localhost:8080/product/list/phone");
+			//list tablet type=2
+			respone = getDataTypeGet("http://localhost:8080/product/list/tablet");
 			ObjectMapper mapper = new ObjectMapper();
 			Product[] products = mapper.readValue(respone, Product[].class);
 			andView.addObject("products",products);

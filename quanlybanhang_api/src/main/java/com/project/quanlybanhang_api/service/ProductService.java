@@ -44,5 +44,11 @@ public class ProductService implements ProductServiceImp{
 		// TODO Auto-generated method stub
 		return productRepository.getProductByPhone();
 	}
+
+	@Override
+	public List<Map<String, ?>> getProductByTablet() {
+		// TODO Auto-generated method stub
+		return productRepository.getProductByTablet();
+	}
 	
 }
