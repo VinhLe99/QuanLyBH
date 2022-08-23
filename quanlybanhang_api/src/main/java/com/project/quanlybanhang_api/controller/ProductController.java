@@ -1,6 +1,7 @@
 package com.project.quanlybanhang_api.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -37,11 +38,18 @@ public class ProductController {
 		  List<Product> list = productServiceImp.findAll();
 		  return new ResponseEntity<List<Product>>(list,HttpStatus.OK);
 	}
+	
+	// List Product by phone
+	@GetMapping("/list/phone")
+	public ResponseEntity<?> getProductByPhone() {
+		List<Map<String, ?>> listProduct = productServiceImp.getProductByPhone();
+		  return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
+	}
 	// Insert Product
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/insert")
 	public ResponseEntity<?> insertProduct(@RequestParam("file") MultipartFile file,@RequestParam("ProductName") String ProductName,
-			@RequestParam("ProductPrice") int ProductPrice,@RequestParam("ProductDescription") String ProductDescription,
+			@RequestParam("ProductPrice") String ProductPrice,@RequestParam("ProductDescription") String ProductDescription,
 			@RequestParam("ProductScreenType") String ProductScreenType,@RequestParam("ProductScreenSize") String ProductScreenSize,
 			@RequestParam("ProductFrontCamere") String ProductFrontCamere,
 			@RequestParam("ProductBackCamera") String ProductBackCamera,@RequestParam("ProductProducer") String ProductProducer,
@@ -49,17 +57,17 @@ public class ProductController {
 		upLoadFileService.init();
 		Product product = new Product();
 		if(upLoadFileService.saveFile(file)) {			
-			product.setProductName(ProductName);
-			product.setProductAvatar(file.getOriginalFilename());
-			product.setProductPrice(ProductPrice);
-			product.setProductDescription(ProductDescription);
-			product.setProductScreenType(ProductScreenType);
-			product.setProductScreenSize(ProductScreenSize);
-			product.setProductFrontCamere(ProductFrontCamere);
-			product.setProductBackCamera(ProductBackCamera);
-			product.setProductProducer(ProductProducer);
-			product.setProducType(ProductType);
-			product.setProductStatus(ProductStatus);
+			product.setProduct_name(ProductName);
+			product.setProduct_avatar(file.getOriginalFilename());
+			product.setProduct_price(ProductPrice);
+			product.setProduct_description(ProductDescription);
+			product.setProduct_screen_type(ProductScreenType);
+			product.setProduct_screen_size(ProductScreenSize);
+			product.setProduct_front_camere(ProductFrontCamere);
+			product.setProduct_back_camera(ProductBackCamera);
+			product.setProduct_producer(ProductProducer);
+			product.setProduct_type(ProductType);
+			product.setProduct_status(ProductStatus);
 			productServiceImp.insertProduct(product);
 		}		
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
@@ -76,38 +84,38 @@ public class ProductController {
 	@PutMapping("/update/{id}")
 	public ResponseEntity<?> updateProduct(@RequestBody Product product,@PathVariable("id") int Id){
 		Product updateProduct = productServiceImp.findById(Id);
-		if(product.getProductName() != null) {
-			updateProduct.setProductName(product.getProductName());
+		if(product.getProduct_name() != null) {
+			updateProduct.setProduct_name(product.getProduct_name());
 		}
-		if(product.getProductAvatar() != null) {
-			updateProduct.setProductAvatar(product.getProductAvatar());
+		if(product.getProduct_avatar() != null) {
+			updateProduct.setProduct_avatar(product.getProduct_avatar());
 		}
-		if(product.getProductPrice() != 0) {
-			updateProduct.setProductPrice(product.getProductPrice());
+		if(product.getProduct_price() != null) {
+			updateProduct.setProduct_price(product.getProduct_price());
 		}
-		if(product.getProductDescription() != null) {
-			updateProduct.setProductDescription(product.getProductDescription());
+		if(product.getProduct_description() != null) {
+			updateProduct.setProduct_description(product.getProduct_description());
 		}
-		if(product.getProductScreenType() != null) {
-			updateProduct.setProductScreenType(product.getProductScreenType());
+		if(product.getProduct_screen_type() != null) {
+			updateProduct.setProduct_screen_type(product.getProduct_screen_type());
 		}
-		if(product.getProductScreenSize() != null) {
-			updateProduct.setProductScreenSize(product.getProductScreenSize());
+		if(product.getProduct_screen_size() != null) {
+			updateProduct.setProduct_screen_size(product.getProduct_screen_size());
 		}
-		if(product.getProductFrontCamere() != null) {
-			updateProduct.setProductFrontCamere(product.getProductFrontCamere());
+		if(product.getProduct_front_camere() != null) {
+			updateProduct.setProduct_front_camere(product.getProduct_front_camere());
 		}
-		if(product.getProductBackCamera() != null) {
-			updateProduct.setProductBackCamera(product.getProductBackCamera());
+		if(product.getProduct_back_camera() != null) {
+			updateProduct.setProduct_back_camera(product.getProduct_back_camera());
 		}
-		if(product.getProductProducer() != null) {
-			updateProduct.setProductProducer(product.getProductProducer());
+		if(product.getProduct_producer() != null) {
+			updateProduct.setProduct_producer(product.getProduct_producer());
 		}
-		if(product.getProducType() != 0) {
-			updateProduct.setProducType(product.getProducType());
+		if(product.getProduct_type() != 0) {
+			updateProduct.setProduct_type(product.getProduct_type());
 		}
-		if(product.getProductStatus() != null) {
-			updateProduct.setProductStatus(product.getProductStatus());
+		if(product.getProduct_status() != null) {
+			updateProduct.setProduct_status(product.getProduct_status());
 		}
 		productServiceImp.updateProduct(updateProduct);
 		return new ResponseEntity<Product>(updateProduct, HttpStatus.OK);

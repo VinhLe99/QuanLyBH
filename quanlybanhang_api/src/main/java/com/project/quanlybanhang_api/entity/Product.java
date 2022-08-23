@@ -20,37 +20,37 @@ public class Product {
 	private Set<Cart> carts;
 	
 	@Column( name = "product_name")
-	private String productName;
+	private String product_name;
 	
 	@Column( name = "product_avatar")
-	private String productAvatar;
+	private String product_avatar;
 	
 	@Column( name = "product_price")
-	private float productPrice;
+	private String product_price;
 	
 	@Column( name = "product_type")
-	private int producType;
+	private int product_type;
 	
 	@Column( name = "product_description")
-	private String productDescription;
+	private String product_description;
 	
-	@Column( name = "product_screentype")
-	private String productScreenType;
+	@Column( name = "product_screen_type")
+	private String product_screen_type;
 	
-	@Column( name = "product_screensize")
-	private String productScreenSize;
+	@Column( name = "product_screen_size")
+	private String product_screen_size;
 	
 	@Column( name = "product_front_camere")
-	private String productFrontCamere;
+	private String product_front_camere;
 	
 	@Column( name = "product_back_camera")
-	private String productBackCamera;
+	private String product_back_camera;
 	
 	@Column( name = "product_producer")
-	private String productProducer;
+	private String product_producer;
 	
 	@Column(name = "product_status")
-	private String productStatus;
+	private String product_status;
 
 	public int getId() {
 		return id;
@@ -60,92 +60,91 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getProduct_name() {
+		return product_name;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
-	public String getProductAvatar() {
-		return productAvatar;
+	public String getProduct_avatar() {
+		return product_avatar;
 	}
 
-	public void setProductAvatar(String productAvatar) {
-		this.productAvatar = productAvatar;
+	public void setProduct_avatar(String product_avatar) {
+		this.product_avatar = product_avatar;
 	}
 
-	public float getProductPrice() {
-		return productPrice;
+	public String getProduct_price() {
+		return product_price;
 	}
 
-	public void setProductPrice(float productPrice) {
-		this.productPrice = productPrice;
+	public void setProduct_price(String product_price) {
+		this.product_price = product_price;
 	}
 
-	public int getProducType() {
-		return producType;
+	public int getProduct_type() {
+		return product_type;
 	}
 
-	public void setProducType(int producType) {
-		this.producType = producType;
+	public void setProduct_type(int produc_type) {
+		this.product_type = produc_type;
 	}
 
-	public String getProductDescription() {
-		return productDescription;
+	public String getProduct_description() {
+		return product_description;
 	}
 
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
+	public void setProduct_description(String product_description) {
+		this.product_description = product_description;
 	}
 
-	public String getProductFrontCamere() {
-		return productFrontCamere;
+	public String getProduct_screen_type() {
+		return product_screen_type;
 	}
 
-	public void setProductFrontCamere(String productFrontCamere) {
-		this.productFrontCamere = productFrontCamere;
+	public void setProduct_screen_type(String product_screenType) {
+		this.product_screen_type = product_screenType;
 	}
 
-	public String getProductBackCamera() {
-		return productBackCamera;
+	public String getProduct_screen_size() {
+		return product_screen_size;
 	}
 
-	public void setProductBackCamera(String productBackCamera) {
-		this.productBackCamera = productBackCamera;
+	public void setProduct_screen_size(String product_screen_size) {
+		this.product_screen_size = product_screen_size;
 	}
 
-	public String getProductProducer() {
-		return productProducer;
+	public String getProduct_front_camere() {
+		return product_front_camere;
 	}
 
-	public void setProductProducer(String productProducer) {
-		this.productProducer = productProducer;
+	public void setProduct_front_camere(String product_front_camere) {
+		this.product_front_camere = product_front_camere;
 	}
 
-	public String getProductStatus() {
-		return productStatus;
+	public String getProduct_back_camera() {
+		return product_back_camera;
 	}
 
-	public void setProductStatus(String productStatus) {
-		this.productStatus = productStatus;
+	public void setProduct_back_camera(String product_back_camera) {
+		this.product_back_camera = product_back_camera;
 	}
 
-	public String getProductScreenType() {
-		return productScreenType;
+	public String getProduct_producer() {
+		return product_producer;
 	}
 
-	public void setProductScreenType(String productScreenType) {
-		this.productScreenType = productScreenType;
+	public void setProduct_producer(String product_producer) {
+		this.product_producer = product_producer;
 	}
 
-	public String getProductScreenSize() {
-		return productScreenSize;
+	public String getProduct_status() {
+		return product_status;
 	}
 
-	public void setProductScreenSize(String productScreenSize) {
-		this.productScreenSize = productScreenSize;
-	}
-	
+	public void setProduct_status(String product_status) {
+		this.product_status = product_status;
+	}	
 }
