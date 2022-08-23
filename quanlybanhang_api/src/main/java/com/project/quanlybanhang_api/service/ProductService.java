@@ -1,6 +1,7 @@
 package com.project.quanlybanhang_api.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,12 @@ public class ProductService implements ProductServiceImp{
 	@Override
 	public Product findById(int id) {
 		return productRepository.findById(id);
+	}
+
+	@Override
+	public List<Map<String, ?>> getProductByPhone() {
+		// TODO Auto-generated method stub
+		return productRepository.getProductByPhone();
 	}
 	
 }
