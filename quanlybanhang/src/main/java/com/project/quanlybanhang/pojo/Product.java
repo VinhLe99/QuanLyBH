@@ -4,7 +4,7 @@ public class Product {
 	private int id;
 	private String product_name;	
 	private String product_avatar;
-	private String product_price;	
+	private float product_price;	
 	private int product_type;	
 	private String product_description;	
 	private String product_screen_type;	
@@ -31,11 +31,11 @@ public class Product {
 	}
 	public void setProduct_avatar(String product_avatar) {
 		this.product_avatar = product_avatar;
-	}
-	public String getProduct_price() {
+	}	
+	public float getProduct_price() {
 		return product_price;
 	}
-	public void setProduct_price(String product_price) {
+	public void setProduct_price(float product_price) {
 		this.product_price = product_price;
 	}
 	public int getProduct_type() {

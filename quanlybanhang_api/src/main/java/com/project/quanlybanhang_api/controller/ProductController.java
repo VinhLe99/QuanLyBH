@@ -49,7 +49,7 @@ public class ProductController {
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/insert")
 	public ResponseEntity<?> insertProduct(@RequestParam("file") MultipartFile file,@RequestParam("ProductName") String ProductName,
-			@RequestParam("ProductPrice") String ProductPrice,@RequestParam("ProductDescription") String ProductDescription,
+			@RequestParam("ProductPrice") float ProductPrice,@RequestParam("ProductDescription") String ProductDescription,
 			@RequestParam("ProductScreenType") String ProductScreenType,@RequestParam("ProductScreenSize") String ProductScreenSize,
 			@RequestParam("ProductFrontCamere") String ProductFrontCamere,
 			@RequestParam("ProductBackCamera") String ProductBackCamera,@RequestParam("ProductProducer") String ProductProducer,
@@ -90,7 +90,7 @@ public class ProductController {
 		if(product.getProduct_avatar() != null) {
 			updateProduct.setProduct_avatar(product.getProduct_avatar());
 		}
-		if(product.getProduct_price() != null) {
+		if(product.getProduct_price() != 0) {
 			updateProduct.setProduct_price(product.getProduct_price());
 		}
 		if(product.getProduct_description() != null) {
