@@ -26,7 +26,7 @@ public class Product {
 	private String product_avatar;
 	
 	@Column( name = "product_price")
-	private String product_price;
+	private float product_price;
 	
 	@Column( name = "product_type")
 	private int product_type;
@@ -76,11 +76,11 @@ public class Product {
 		this.product_avatar = product_avatar;
 	}
 
-	public String getProduct_price() {
+	public float getProduct_price() {
 		return product_price;
 	}
 
-	public void setProduct_price(String product_price) {
+	public void setProduct_price(float product_price) {
 		this.product_price = product_price;
 	}
 
