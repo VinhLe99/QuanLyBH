@@ -13,7 +13,10 @@ import com.project.quanlybanhang_api.entity.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 
 	public Product findById(int id);
-	
+	//list phone
 	@Query(value = "call GetProductByPhone()", nativeQuery = true)
 	List<Map<String, ?>> getProductByPhone();
+	//list tablet
+	@Query(value = "call GetProductByTablet()", nativeQuery = true)
+	List<Map<String, ?>> getProductByTablet();
 }
