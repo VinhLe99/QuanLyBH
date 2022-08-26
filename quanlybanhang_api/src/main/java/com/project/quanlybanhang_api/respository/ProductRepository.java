@@ -19,4 +19,10 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	//list tablet
 	@Query(value = "call GetProductByTablet()", nativeQuery = true)
 	List<Map<String, ?>> getProductByTablet();
+	//list laptop
+	@Query(value = "call GetProductByLaptop()", nativeQuery = true)
+	List<Map<String, ?>> getProductByLaptop();
+	//list order
+	@Query(value = "call GetProductByOther()", nativeQuery = true)
+	List<Map<String, ?>> getProductByOther();
 }

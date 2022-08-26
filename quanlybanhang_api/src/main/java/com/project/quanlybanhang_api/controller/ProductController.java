@@ -45,6 +45,24 @@ public class ProductController {
 		List<Map<String, ?>> listProduct = productServiceImp.getProductByPhone();
 		  return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
 	}
+	// List Product by phone
+	@GetMapping("/list/tablet")
+	public ResponseEntity<?> getProductByTablet() {
+		List<Map<String, ?>> listProduct = productServiceImp.getProductByTablet();
+			return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
+	}
+	// List Product by laptop
+	@GetMapping("/list/laptop")
+	public ResponseEntity<?> getProductByLaptop() {
+		List<Map<String, ?>> listProduct = productServiceImp.getProductByLaptop();
+			return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
+	}
+	// List Product by order
+	@GetMapping("/list/other")
+	public ResponseEntity<?> getProductByOrder() {
+		List<Map<String, ?>> listProduct = productServiceImp.getProductByOther();
+			return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
+	}
 	// Insert Product
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/insert")
