@@ -50,5 +50,17 @@ public class ProductService implements ProductServiceImp{
 		// TODO Auto-generated method stub
 		return productRepository.getProductByTablet();
 	}
+
+	@Override
+	public List<Map<String, ?>> getProductByLaptop() {
+		// TODO Auto-generated method stub
+		return productRepository.getProductByLaptop();
+	}
+
+	@Override
+	public List<Map<String, ?>> getProductByOther() {
+		// TODO Auto-generated method stub
+		return productRepository.getProductByOther();
+	}
 	
 }

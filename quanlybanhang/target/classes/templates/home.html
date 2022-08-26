@@ -35,6 +35,7 @@
     <![endif]-->
   </head>
   <body>
+  
    <header class=""></header>
     <!-- End header area -->
     
@@ -48,8 +49,8 @@
                 </div>
                 
                 <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">Cart - <span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"></span></a>
+                    <div class="shopping-item" data-toggle="modal" data-target="#exampleModal">
+                        Cart - <span class="total-cart"></span>$<i class="fa fa-shopping-cart" style="font-size:2rem;"></i><span class="total-count" id="total-qtyy"></span>
                     </div>
                 </div>
             </div>
@@ -72,7 +73,7 @@
                         <li class="active"><a th:href="@{/home}">Home</a></li>
                         <li><a th:href="@{/phone}">Phone</a></li>
                         <li><a th:href="@{/tablet}">Tablet</a></li>
-                        <li><a th:href="@{/home}">Laptop</a></li>
+                        <li><a th:href="@{/laptop}">Laptop</a></li>
                         <li><a th:href="@{/other}">Other</a></li>
                     </ul>
                 </div>  
@@ -162,24 +163,21 @@
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" >
                     <div class="latest-product">
                         <h2 class="section-title">Latest Products</h2>
                         <div class="product-carousel">
                             <div class="single-product" th:each="product : ${products}">
-                                <div class="product-f-image">
+                                <div class="product-f-image" >
                                     <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt=""/>
                                     <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a class="add-to-cart-link" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</a>
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
-                                </div>
-                                
-                                <h2><a href="single-product.html" ></a></h2>
-                                
+                                </div>  
                                 <div class="product-carousel-price">
-                                	<h2 th:utext="${product.getProduct_name()}"></h2><br/>
-                                    <ins th:utext="${product.getProduct_price()}"></ins>                                    
+                                	<h2 id="name" th:utext="${product.getProduct_name()}"></h2><br/>
+                                    <ins id="price" th:utext="${product.getProduct_price()}"></ins>                                 
                                 </div> 
                             </div>
                         </div>
@@ -442,7 +440,64 @@
             </div>
         </div>
     </div> <!-- End footer bottom area -->
-   
+   <!-- Modal cart-->
+   <div class="cart">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <span class="empty-cart">Looks Like You Haven't Added Any Product In The Cart</span> -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>                                        
+                                        <th>Name</th>
+                                        <th>Image</th>                                        
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Delete</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="show-cart">
+                                	<tr>
+                                        <td></td>                                        
+                                        <td></td>
+                                        <td style="width:30px"></td>                                        
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table> 
+                        </div>
+                        <div class="modal-footer">
+                            <strong class="mr-3">
+                                Total price:
+                                <span class="total-cart"></span>
+                                $
+                            </strong>
+                            <button class="btnn buy" id="buyEl">
+                                Purchase 
+                                <i class="fa fa-money-check" style="color:#6665dd;"></i>
+                            </button>
+                            <button class="clear-cart" id="deleteEL">
+                                Clear Cart 
+                                <i class="fa fa-trash" style="color:#bb342f;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>                
+            </div>    
+     
     <!-- Latest jQuery form server -->
     <script src="https://code.jquery.com/jquery.min.js"></script>
     
@@ -458,7 +513,7 @@
     
     <!-- Main Script -->
     <script th:src="@{assets/js/main.js}"></script>
-    
+    <script th:src="@{assets/js/cart.js}"></script>
     <!-- Slider -->
     <script type="text/javascript" th:src="@{assets/js/bxslider.min.js}"></script>
 	<script type="text/javascript" th:src="@{assets/js/script.slider.js}"></script>
