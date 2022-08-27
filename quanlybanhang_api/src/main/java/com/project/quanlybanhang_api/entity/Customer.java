@@ -1,6 +1,5 @@
 package com.project.quanlybanhang_api.entity;
 
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -18,26 +17,22 @@ public class Customer {
 	private int id;
 	
 	@OneToMany(mappedBy = "customer")
-	private Set<Cart> carts;
-	
+	private Set<Cart> carts;	
 	
 	@Column( name = "customer_name")
 	private String customerName;
 	
 	@Column( name = "phone_number")
-	private int phoneNumber;
+	private String phoneNumber;
+	
+	@Column( name = "mail")
+	private String mail;
 	
 	@Column( name = "customer_address")
 	private String customerAddress;
 	
 	@Column( name = "gender")
-	private int gender;
-	
-	@Column( name = "birthofday")
-	private Date birthOfDay;
-	
-	@Column( name = "status")
-	private int status;
+	private String gender;
 
 	public int getId() {
 		return id;
@@ -63,12 +58,20 @@ public class Customer {
 		this.customerName = customerName;
 	}
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
 	public String getCustomerAddress() {
@@ -79,29 +82,11 @@ public class Customer {
 		this.customerAddress = customerAddress;
 	}
 
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	public Date getBirthOfDay() {
-		return birthOfDay;
-	}
-
-	public void setBirthOfDay(Date birthOfDay) {
-		this.birthOfDay = birthOfDay;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-	
-	
+	}	
 }

@@ -7,11 +7,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.quanlybanhang_api.entity.Customer;
+import com.project.quanlybanhang_api.entity.Staff;
 import com.project.quanlybanhang_api.service.CustomerServiceImp;
 
 @Controller
@@ -27,6 +32,43 @@ public class CustomerController  {
 		  return new ResponseEntity<List<Customer>>(list,HttpStatus.OK);
 		
 	}
-	
-
+	// insert customer
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@PostMapping("/insert")
+	public ResponseEntity<?> insertCustomer(@RequestBody Customer customer){
+			customerServiceImp.insertCustomer(customer);
+		return new ResponseEntity<String>("Insert Success", HttpStatus.OK);		
+	}
+	// delete customer
+		@PreAuthorize("hasRole('ROLE_ADMIN')")
+		@DeleteMapping("/delete/{id}")
+		public ResponseEntity<?> deleteCustomer(@PathVariable("id") int Id){
+			customerServiceImp.deleteCustomer(Id);
+			return new ResponseEntity<String>("Delete Success", HttpStatus.OK);		
+		}
+		
+	// Update Product
+			@PreAuthorize("hasRole('ROLE_ADMIN')")
+			@PutMapping("/update/{id}")
+			public ResponseEntity<Customer> updateCustomerById(@PathVariable("id") int Id,
+					@RequestBody Customer customer){
+				Customer getcustomer = customerServiceImp.findCustomerById(Id);
+				if(getcustomer.getCustomerName() != null) {
+					getcustomer.setCustomerName(customer.getCustomerName());
+				}
+				if(getcustomer.getPhoneNumber() != null) {
+					getcustomer.setPhoneNumber(customer.getPhoneNumber());;
+				}
+				if(getcustomer.getMail() != null) {
+					getcustomer.setMail(customer.getMail());
+				}
+				if(getcustomer.getCustomerAddress() != null) {
+					getcustomer.setCustomerAddress(customer.getCustomerAddress());
+				}				
+				if(getcustomer.getGender() != null) {
+					getcustomer.setGender(customer.getGender());
+				}
+				customerServiceImp.updateCustomer(getcustomer);
+				return new ResponseEntity<Customer>(customer, HttpStatus.OK);	
+			}
 }
