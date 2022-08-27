@@ -20,9 +20,6 @@ public class Staff {
 	@OneToMany(mappedBy = "staff")
 	private Set<StaffRoles> staffRoles;
 
-	@OneToMany(mappedBy = "staff")
-	private Set<Cart> carts;
-
 	@Column(name = "staff_name")
 	private String staffName;
 
@@ -107,5 +104,4 @@ public class Staff {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }
