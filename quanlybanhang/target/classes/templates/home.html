@@ -172,7 +172,7 @@
                                     <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt=""/>
                                     <div class="product-hover">
                                         <a class="add-to-cart-link" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a th:href="@{detail/{id}(id=${product.getId()})}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>  
                                 <div class="product-carousel-price">

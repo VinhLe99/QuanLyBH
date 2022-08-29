@@ -139,7 +139,7 @@ var shoppingCart = (function() {
   // Triggers / Events
   // ***************************************** 
   // Add item
-  $('.product-carousel').click(function(event) {
+  $('.add-to-cart-link').click(function(event) {
     event.preventDefault();
     const product = event.target.parentElement.parentElement.parentElement; 
 	var productImg = product.querySelector("img").src;
