@@ -63,6 +63,12 @@ public class ProductController {
 		List<Map<String, ?>> listProduct = productServiceImp.getProductByOther();
 			return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
 	}
+	// List Product by ID
+		@GetMapping("/list/{id}")
+		public ResponseEntity<?> getProductById(@PathVariable("id") int id) {
+			  Product list = productServiceImp.findById(id);
+			  return new ResponseEntity<Product>(list,HttpStatus.OK);
+		}
 	// Insert Product
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping("/insert")

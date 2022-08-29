@@ -103,11 +103,18 @@
                             <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt="">
                         </div>
                         <h2 th:utext="${product.getProduct_name()}"></h2>
+                        	<div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
                         <div class="product-carousel-price">
                         	<ins th:utext="${product.getProduct_price()}"></ins>
                         </div>                        
                         <div class="product-option-shop">
                         	<a class="add_to_cart_button" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</a>
+                        	<a th:href="@{detail/{id}(id=${product.getId()})}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>                       
                     </div>
                 </div>           

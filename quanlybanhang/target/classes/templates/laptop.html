@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="./"><img src="img/logo.png"></a></h1>
+                        <h1><a href="./"><img th:src="@{assets/img/logo.png}"></a></h1>
                     </div>
                 </div>
                 
@@ -96,21 +96,29 @@
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
-            <div class="row">
+            <div class="row-product">
                 <div class="col-md-3 col-md-3" th:each="product : ${products}">
                     <div class="single-shop-product" >
                         <div class="product-upper">
                             <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt="">
                         </div>
                         <h2 th:utext="${product.getProduct_name()}"></h2>
+                        <div class="product-wid-rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
                         <div class="product-carousel-price">
                         	<ins th:utext="${product.getProduct_price()}"></ins>
                         </div>                        
                         <div class="product-option-shop">
                         	<a class="add_to_cart_button" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</a>
+                        	<a th:href="@{detail/{id}(id=${product.getId()})}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                         </div>                       
                     </div>
-                </div> 
+                </div>           
             </div>
             
             <div class="row">
@@ -290,5 +298,6 @@
     
     <!-- Main Script -->
     <script th:src="@{assets/js/main.js}"></script>
+    <script th:src="@{assets/js/cart.js}"></script>
   </body>
 </html>
