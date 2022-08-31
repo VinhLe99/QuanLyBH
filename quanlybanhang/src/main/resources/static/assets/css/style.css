@@ -73,7 +73,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
     text-align: center;
 }
 
-.mainmenu-area {background: none repeat scroll 0 0 #fbfbfb;
+.mainmenu-area {background: none repeat scroll 0 0 #000000;
 font-family: "Roboto Condensed",sans-serif;
 text-transform: uppercase;
 width: 100%;
@@ -142,7 +142,7 @@ z-index: 999;}
 
 
 .mainmenu-area ul.navbar-nav li a {
-    color: #6e6a6a;
+    color: #ffffff;
     font-size: 14px;
     padding: 20px;
 }
@@ -678,7 +678,7 @@ width: 10px;
   margin: 10px 0 0;
 }
 
-.product-big-title-area {background: url(img/crossword.png) repeat scroll 0 0 #5a88ca}
+.product-big-title-area {background: url(/assets/img/crossword.png) repeat scroll 0 0 #5a88ca}
 
 .product-bit-title h2 {
   font-family: raleway;
@@ -809,19 +809,59 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     padding: 5px;
     width: 50px;
 }
+/* --------css for button product-------- *//* --------css for button product-------- *//* --------css for button product-------- */
 .add_to_cart_button {
     background: none repeat scroll 0 0 #5a88ca;
     border: medium none;
     color: #fff;
-    padding: 6px 25px;display: inline-block
+    padding: 6px 15px;display: inline-block
 }
 .add_to_cart_button:hover {background-color: #222;color: #fff;text-decoration: none}
+.view-details-link {
+    background: none repeat scroll 0 0 #5a88ca;
+    border: medium none;
+    color: #fff;
+    padding: 6px 15px;display: inline-block
+}
+.view-details-link:hover {background-color: #222;color: #fff;text-decoration: none}
 form.cart {
     margin-bottom: 25px;
 }
+	/* --------css for cart-------- *//* --------css for cart-------- *//* --------css for cart-------- */
+.checkout {
+    background: none repeat scroll 0 0 #5a88ca;
+    border: medium none;
+    color: #fff;
+    padding: 6px 10px;display: inline-block
+}
+.checkout:hover {background-color: #222;color: #fff;text-decoration: none}
+.add-to-cart-detail {
+    background: none repeat scroll 0 0 #5a88ca;
+    border: medium none;
+    color: #fff;
+    padding: 6px 15px;display: inline-block
+}
+.add-to-cart-detail:hover {background-color: #222;color: #fff;text-decoration: none}
+.view-details-link {
+    background: none repeat scroll 0 0 #5a88ca;
+    border: medium none;
+    color: #fff;
+    padding: 6px 15px;display: inline-block
+}
+
+
+.clear-cart {
+    background: none repeat scroll 0 0 #5a88ca;
+    border: medium none;
+    color: #fff;
+    padding: 6px 10px;display: inline-block
+}
+.clear-cart:hover {background-color: #222;color: #fff;text-decoration: none}
 .product-inner-category {
     margin-bottom: 30px;
 }
+
+
 .product-tab {
     border-bottom: 1px solid #ddd;
     list-style: outside none none;

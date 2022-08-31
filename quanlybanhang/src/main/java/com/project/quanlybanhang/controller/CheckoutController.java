@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,7 +28,7 @@ public class CheckoutController {
 		ModelAndView andView = new ModelAndView("checkout");
 		String respone;
 		try {
-			respone = getDataTypeGet("http://localhost:8080/product");
+			respone = getDataTypeGet("http://localhost:8080/product/list");
 			ObjectMapper mapper = new ObjectMapper();
 			Product[] products = mapper.readValue(respone, Product[].class);
 			andView.addObject("products",products);
@@ -36,6 +37,12 @@ public class CheckoutController {
 		}		
 		return andView;
 	}
+//	@PostMapping("")
+//	public String back(HttpServletRequest request){
+//		request.getRequestDispatcher("/home");
+//		return "redirect:/home";
+//	}
+
 	private String getDataTypeGet(String url) throws IOException {
 		// Khai báo sử dụng đường dẫn
 		StringBuilder responeData = new StringBuilder();

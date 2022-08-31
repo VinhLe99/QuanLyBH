@@ -32,22 +32,7 @@ public class CustomerController  {
 		  return new ResponseEntity<List<Customer>>(list,HttpStatus.OK);
 		
 	}
-	// insert customer
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@PostMapping("/insert")
-	public ResponseEntity<?> insertCustomer(@RequestBody Customer customer){
-			customerServiceImp.insertCustomer(customer);
-		return new ResponseEntity<String>("Insert Success", HttpStatus.OK);		
-	}
-	// delete customer
-		@PreAuthorize("hasRole('ROLE_ADMIN')")
-		@DeleteMapping("/delete/{id}")
-		public ResponseEntity<?> deleteCustomer(@PathVariable("id") int Id){
-			customerServiceImp.deleteCustomer(Id);
-			return new ResponseEntity<String>("Delete Success", HttpStatus.OK);		
-		}
-		
-	// Update Product
+	// Update
 			@PreAuthorize("hasRole('ROLE_ADMIN')")
 			@PutMapping("/update/{id}")
 			public ResponseEntity<Customer> updateCustomerById(@PathVariable("id") int Id,

@@ -71,7 +71,7 @@
                      <ul class="nav navbar-nav">
                         <li><a th:href="@{/home}">Home</a></li>
                         <li><a th:href="@{/phone}">Phone</a></li>
-                        <li><a th:href="@{/home}">Tablet</a></li>
+                        <li><a th:href="@{/tablet}">Tablet</a></li>
                         <li class="active"><a th:href="@{/laptop}">Laptop</a></li>
                         <li><a th:href="@{/other}">Other</a></li>
                     </ul>
@@ -98,21 +98,20 @@
         <div class="container">
             <div class="row-product">
                 <div class="col-md-3 col-md-3" th:each="product : ${products}">
-                    <div class="single-shop-product" >
+                    <div class="single-shop-product" style="text-align: center;">
                         <div class="product-upper">
                             <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt="">
                         </div>
-                        <h2 th:utext="${product.getProduct_name()}"></h2>
+                        <h2 th:utext="${product.getProduct_name()}"></h2>                        	
+                        <div class="product-carousel-price">
+                        	<ins th:utext="${product.getProduct_price()}"></ins>$
+                        </div>   
                         <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        <div class="product-carousel-price">
-                        	<ins th:utext="${product.getProduct_price()}"></ins>
-                        </div>                        
+                            </div>                        
                         <div class="product-option-shop">
                         	<a class="add_to_cart_button" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</a>
                         	<a th:href="@{detail/{id}(id=${product.getId()})}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
@@ -270,10 +269,8 @@
                                 <span class="total-cart"></span>
                                 $
                             </strong>
-                            <button class="btnn buy" id="buyEl">
-                                Purchase 
+                                <a class="checkout" th:href="@{/checkout}">Purchase </a>
                                 <i class="fa fa-money-check" style="color:#6665dd;"></i>
-                            </button>
                             <button class="clear-cart" id="deleteEL">
                                 Clear Cart 
                                 <i class="fa fa-trash" style="color:#bb342f;"></i>

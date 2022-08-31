@@ -1,3 +1,8 @@
-INDEX VERSION 1.4+D:\QLBH\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+INDEX VERSION 1.4+D:\QuanLyBH\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3414217584.index
+5484070.index
+2791126428.index
 1828540450.index
+3226188953.index
 912159124.index
+2605875146.index

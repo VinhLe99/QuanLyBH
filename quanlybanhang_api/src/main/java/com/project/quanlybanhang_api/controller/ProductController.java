@@ -43,6 +43,7 @@ public class ProductController {
 	@GetMapping("/list/phone")
 	public ResponseEntity<?> getProductByPhone() {
 		List<Map<String, ?>> listProduct = productServiceImp.getProductByPhone();
+		System.out.println(listProduct.get(0));
 		  return new ResponseEntity<List<Map<String, ?>>>(listProduct,HttpStatus.OK);
 	}
 	// List Product by phone
