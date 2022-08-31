@@ -13,7 +13,4 @@ import com.project.quanlybanhang_api.entity.Staff;
 public interface StaffRepository extends JpaRepository<Staff, Integer>{	
 	public Staff findStaffByEmail(String email);
 	public Staff findStaffById(int Id);
-	//De day co sai toi thi xoa comment
-//	@Query(value = "call GetAllStaff", nativeQuery = true)
-//	List<Map<String,?>> GetAllStaff();	
 }

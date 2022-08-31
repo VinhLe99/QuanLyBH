@@ -17,7 +17,7 @@ public class Customer {
 	private int id;
 	
 	@OneToMany(mappedBy = "customer")
-	private Set<Cart> carts;	
+	private Set<Cart> cart;	
 	
 	@Column( name = "customer_name")
 	private String customerName;
@@ -40,14 +40,6 @@ public class Customer {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Set<Cart> getCarts() {
-		return carts;
-	}
-
-	public void setCarts(Set<Cart> carts) {
-		this.carts = carts;
 	}
 
 	public String getCustomerName() {
@@ -89,4 +81,5 @@ public class Customer {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}	
+	
 }

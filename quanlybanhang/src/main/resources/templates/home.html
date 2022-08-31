@@ -175,9 +175,9 @@
                                         <a th:href="@{detail/{id}(id=${product.getId()})}" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>  
-                                <div class="product-carousel-price">
-                                	<h2 id="name" th:utext="${product.getProduct_name()}"></h2><br/>
-                                    <ins id="price" th:utext="${product.getProduct_price()}"></ins>                                 
+                                <div class="product-carousel-price" style="text-align: center;">
+                                	<h2 id="name" th:utext="${product.getProduct_name()}"></h2>
+                                    <ins id="price" th:utext="${product.getProduct_price()}"></ins>$                                
                                 </div> 
                             </div>
                         </div>
@@ -484,10 +484,8 @@
                                 <span class="total-cart"></span>
                                 $
                             </strong>
-                            <button class="btnn buy" id="buyEl">
-                                Purchase 
+                                <a class="checkout" th:href="@{/checkout}">Purchase </a>
                                 <i class="fa fa-money-check" style="color:#6665dd;"></i>
-                            </button>
                             <button class="clear-cart" id="deleteEL">
                                 Clear Cart 
                                 <i class="fa fa-trash" style="color:#bb342f;"></i>

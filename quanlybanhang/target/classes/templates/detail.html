@@ -140,23 +140,31 @@
                 </div>
                 
                 <div class="col-md-8">
-                    <div class="product-content-right">
-                        <div class="product-breadcroumb">
-                            <a th:href="@{/phone}">Phone</a>
-                        	<a th:href="@{/tablet}">Tablet</a>
-                        	<a th:href="@{/laptop}">Laptop</a>
-                        	<a th:href="@{/other}">Other</a>
-                        </div>
-                        
+                    <div class="product-content-right">                      
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
                                         <img th:src="@{http://localhost:8080/file/} + ${product.getProduct_avatar()}" alt="">
                                     </div>
+                                    <div>
+	                                    <table>
+			                                    <tr>
+			                                        <td>Screen type: </td>
+			                                        <td style="padding-left: 5px" th:utext="${product.getProduct_screen_type()}"></td>		                                            
+			                                    </tr>
+			                                    <tr>
+			                                        <td>Screen size:</td>  
+			                                        <td style="padding-left: 5px" th:utext="${product.getProduct_screen_size()}"></td>		                                            
+			                                    </tr> 
+			                                    <tr>
+			                                        <td>Producer:</td>  
+			                                        <td style="padding-left: 5px"th:utext="${product.getProduct_producer()}"></td>		                                            
+			                                    </tr>  
+			                            </table>                                                              
+                                    </div>
                                 </div>
-                            </div>
-                            
+                            </div>                            
                             <div class="col-sm-6">
                                 <div class="product-inner">
                                     <h2 class="product-name" id="name" th:utext="${product.getProduct_name()}"></h2>
@@ -168,18 +176,12 @@
 		                            </div>
                                     <div class="product-inner-price">
                                         <ins id="price" th:utext="${product.getProduct_price()}"></ins>
-                                    </div>    
-                                    
-                                    <form action="" class="cart">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
-                                        </div>
-                                        <button class="add_to_cart_button" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i> Add to cart</button>
-                                    </form>   
+                                    </div> 
+                                    <div>                                
+                                    	<a class="add-to-cart-detail" th:attr="data-id=${product.getId()}" data-type="addCart"><i class="fa fa-shopping-cart" ></i>
+                                    	 Add to cart</a>                             
+                                    </div><br/>      
                                     <div role="tabpanel">
-                                        <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                                        </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
                                                 <h2>Product Description</h2>  
@@ -336,10 +338,8 @@
                                 <span class="total-cart"></span>
                                 $
                             </strong>
-                            <button class="btnn buy" id="buyEl">
-                                Purchase 
+                                <h><a class="checkout" th:href="@{/checkout}">Purchase</a></h>
                                 <i class="fa fa-money-check" style="color:#6665dd;"></i>
-                            </button>
                             <button class="clear-cart" id="deleteEL">
                                 Clear Cart 
                                 <i class="fa fa-trash" style="color:#bb342f;"></i>
