@@ -92,7 +92,7 @@
 								iPhone <span class="primary">6 <strong>Plus</strong></span>
 							</h2>
 							<h4 class="caption subtitle">Dual SIM</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" th:href="@{/phone}"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 					<li><img src="assets/img/h4-slide2.png" alt="Slide">
@@ -101,16 +101,16 @@
 								by one, get one <span class="primary">50% <strong>off</strong></span>
 							</h2>
 							<h4 class="caption subtitle">school supplies & backpacks.*</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" th:href="@{/laptop}"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 					<li><img src="assets/img/h4-slide3.png" alt="Slide">
 						<div class="caption-group">
 							<h2 class="caption title">
-								Apple <span class="primary">Store <strong>Ipod</strong></span>
+								Apple <span class="primary">Store <strong>Tablet</strong></span>
 							</h2>
 							<h4 class="caption subtitle">Select Item</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" th:href="@{/tablet}"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 					<li><img src="assets/img/h4-slide4.png" alt="Slide">
@@ -119,7 +119,7 @@
 								Apple <span class="primary">Store <strong>Ipod</strong></span>
 							</h2>
 							<h4 class="caption subtitle">& Phone</h4>
-							<a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+							<a class="caption button-radius" th:href="@{/other}"><span class="icon"></span>Shop now</a>
 						</div>
 					</li>
 				</ul>
@@ -219,35 +219,32 @@
                         <a href="" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+                            <h2><a th:href="@{/phone}">Iphone 8 Plus</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$402.88</ins> <del>$455.30</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="assets/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new mac book 2015</a></h2>
+                            <a th:href="@{/phone}"><img src="assets/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+                            <h2><a href="single-product.html">SamSung Galaxy</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$399.70</ins> <del>$429.99</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
+                            <h2><a th:href="@{/laptop}">Dell 5567 Inspiron</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -256,7 +253,7 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$1001.44</ins> <del>$1255.33</del>
                             </div>                            
                         </div>
                     </div>
@@ -267,7 +264,7 @@
                         <a href="#" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
+                            <h2><a th:href="@{/other}">Sony Playstation Microsoft</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -276,35 +273,32 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$1450.25</ins> <del>$1825.25</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>
+                            <h2><a th:href="@{/phone}">Iphone 7 Plus</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$380.99</ins> <del>$415.34</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
+                            <h2><a th:href="@{/phone}">Samsung Galaxy Note 4</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$476.63</ins> <del>$495.75</del>
                             </div>                            
                         </div>
                     </div>
@@ -315,7 +309,7 @@
                         <a href="#" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>
+                            <h2><a th:href="@{/laptop}">Asus Aspire E5</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -324,35 +318,33 @@
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$1322.79</ins> <del>$1648.86</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
+                            <h2><a th:href="@{/other}">Sony Panasony</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$1470.24</ins> <del>$1825.66</del>
                             </div>                            
                         </div>
                         <div class="single-wid-product">
                             <a href="single-product.html"><img src="assets/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
-                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
+                            <h2><a th:href="@{/phone}">Iphone 6s</a></h2>
                             <div class="product-wid-rating">
-                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
                             <div class="product-wid-price">
-                                <ins>$400.00</ins> <del>$425.00</del>
+                                <ins>$310.42</ins> <del>$355.66</del>
                             </div>                            
                         </div>
                     </div>
@@ -370,10 +362,10 @@
                         <h2>u<span>Stora</span></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
                         <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a th:href="@{https://www.facebook.com/thegioididongcom}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a th:href="@{https://www.thegioididong.com/}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{https://www.youtube.com/user/TGDDVideoReviews}" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a th:href="@{https://www.linkedin.com/company/di-dong-viet/about/}" target="_blank"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -425,7 +417,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                        <p>&copy; 2022 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
                     </div>
                 </div>
                 

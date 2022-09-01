@@ -48,28 +48,18 @@ Create Table customer(
 	phone_number int,
     mail varchar(200),
 	customer_address varchar(200),
-    gender enum("1","2","3"),
-    birthofday date,
-	status int
+    gender enum("1","2","3")
 );
 
 Create Table cart(
-	id int auto_increment primary key,
-	product_id int,
-    staff_id int,
 	customer_id int,
-    foreign key(staff_id) references staff(id),
-    foreign key(product_id) references customer(id),
-	foreign key(customer_id) references product(id)
+	product_id int,	
+    primary key(customer_id,product_id),
+    foreign key(customer_id) references customer(id),
+    foreign key(product_id) references product(id)	
 );
 
-Create Table cartdetail(
-	id int auto_increment Primary Key,
-	cart_id int,
-	quantity int,
-	total_money float,
-    foreign key(cart_id) references cart(id)
-);
+drop table cartdetail;
 	-- Insert roles table
 insert into roles(role_name) values("ROLE_ADMIN");
 insert into roles(role_name) values("ROLE_STAFF");
@@ -362,56 +352,35 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE GetProductByPhone()
 BEGIN
-	select p.product_name, p.product_avatar, p.product_price
+	select p.*
 from product p
-where p.product_producer = "Iphone" or
-	  p.product_producer = "OPPO" or
-      p.product_producer = "Realme" or
-       p.product_producer = "Vivo"
-order by 
-	p.product_price DESC;
+where p.product_type = 1 order by p.id DESC;
 END //
 DELIMITER ;
 -- tablet
 DELIMITER //
 CREATE PROCEDURE GetProductByTablet()
 BEGIN
-	select p.product_name, p.product_avatar, p.product_price
+	select p.*
 from product p
-where p.product_producer = "IPad" or
-	  p.product_producer = "TSam" or
-      p.product_producer = "Tab1" or
-       p.product_producer = "Tab2"
-order by 
-	p.product_price DESC;
+where p.product_type =  2 order by p.id DESC;
 END //
 DELIMITER ;
 -- laptop
 DELIMITER //
 CREATE PROCEDURE GetProductByLaptop()
 BEGIN
-	select p.product_name, p.product_avatar, p.product_price
+select p.id, p.product_name, p.product_avatar, p.product_price
 from product p
-where p.product_producer = "Mac" or
-	  p.product_producer = "Acer" or
-      p.product_producer = "Dell" or
-       p.product_producer = "Asus"
-order by 
-	p.product_price DESC;
+where p.product_type = 3 order by  p.id DESC;
 END //
 DELIMITER ;
 -- order
 DELIMITER //
 CREATE PROCEDURE GetProductByOther()
 BEGIN
-	select p.product_name, p.product_avatar, p.product_price
-from product p
-where p.product_producer = "Watch" or
-	  p.product_producer = "Order1" or
-      p.product_producer = "Order2" or
-       p.product_producer = "Order3"
-order by 
-	p.product_price DESC;
+select *
+from product 
+where product_type = 4 order by id DESC;
 END //
-DELIMITER ;
-call  GetProductByOther();
+call  GetProductByPhone();
