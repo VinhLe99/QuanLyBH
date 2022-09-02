@@ -98,7 +98,49 @@
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+            <div class="col-md-4">
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Search Products</h2>
+                        <form action="">
+                            <input type="text" placeholder="Search products...">
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                    
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Products</h2>
+                        <div class="thubmnail-recent">
+                            <img th:src="@{/assets/img/product-thumb-1.jpg}" class="recent-thumb" alt="">
+                            <h2><a th:href="@{/phone}">Iphone 8 Plus</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$702.99</ins> <del>$742.77</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img th:src="@{/assets/img/product-thumb-2.jpg}" class="recent-thumb" alt="">
+                            <h2><a th:href="@{/tablet}">Samsung Galaxy</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$899.11</ins> <del>$980.00</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img th:src="@{/assets/img/product-thumb-3.jpg}" class="recent-thumb" alt="">
+                            <h2><a th:href="@{/laptop}">Dell 5567 Inspiron</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$990.90</ins> <del>$1260.55</del>
+                            </div>                             
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img th:src="@{/assets/img/product-thumb-4.jpg}" class="recent-thumb" alt="">
+                            <h2><a th:href="@{/other}">Sony Smart TV</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>$1190.90</ins> <del>$1586.25</del>
+                            </div>                             
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
                             <form enctype="multipart/form-data" action="http://localhost:8080/cart/insert" method="post" id="checkout">
@@ -164,14 +206,34 @@
 		                                    </tr>
 		                                </tbody>
                            			</table> 
-                            	    <div class="form-row place-order">
-                            	    	<div class="list">                            	    		
-                            	    		<input type="hidden" data-value="Place order" value="Checkout" name="list" id="place_order" class="button alt">
-                            	    	</div>    
-                            	    	<input type="submit" data-value="Place order" value="Checkout" class="button alt">                               		
-                                    </div>
                                 </div>
-                        </form>
+                                <div id="payment">
+                                        <ul class="payment_methods methods">
+                                            <li class="payment_method_bacs">
+                                                <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
+                                                <label for="payment_method_bacs">Direct Bank Transfer </label>
+                                                <div class="payment_box payment_method_bacs">
+                                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                                </div>
+                                            </li>
+                                            <li class="payment_method_paypal">
+                                                <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
+                                                <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700')" class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What is PayPal?</a>
+                                                </label>
+                                                <div style="display:none;" class="payment_box payment_method_paypal">
+                                                    <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="form-row place-order">
+	                            	    	<div class="list">                            	    		
+	                            	    		<input type="hidden" data-value="Place order" value="Checkout" name="list" id="place_order" class="button alt">
+	                            	    	</div>    
+	                            	    	<input type="submit" data-value="Place order" value="Checkout" class="button alt">                               		
+	                                    </div>
+                                        <div class="clear"></div>
+                                    </div>
+                        	</form>
                         </div>                       
                     </div>                    
                 </div>
@@ -241,7 +303,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                        <p>&copy; 2022 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
                     </div>
                 </div>
                 
