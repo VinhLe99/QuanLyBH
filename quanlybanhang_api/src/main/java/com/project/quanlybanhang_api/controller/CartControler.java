@@ -1,9 +1,6 @@
 package com.project.quanlybanhang_api.controller;
 
-import java.net.http.HttpClient.Redirect;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

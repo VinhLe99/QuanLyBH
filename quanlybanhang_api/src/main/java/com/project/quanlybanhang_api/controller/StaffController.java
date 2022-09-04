@@ -26,14 +26,6 @@ public class StaffController {
 	
 	@Autowired
 	StaffServiceImp serviceImp;
-	//De day co sai toi thi xoa comment
-//	//list Staff by role
-//	@PreAuthorize("hasRole('ROLE_ADMIN')")
-//	@GetMapping("/lists")
-//	public ResponseEntity<?> getStaffByRole() {
-//		  List<Map<String, ?>> list = serviceImp.getStaffByRole();
-//		  return new ResponseEntity<List<Map<String, ?>>>(list,HttpStatus.OK);
-//	}
 	
 	// Get List
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
