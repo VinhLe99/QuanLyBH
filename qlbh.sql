@@ -63,6 +63,27 @@ drop table cartdetail;
 	-- Insert roles table
 insert into roles(role_name) values("ROLE_ADMIN");
 insert into roles(role_name) values("ROLE_STAFF");
+-- Insert roles table
+insert into staff_role(role_id,staff_id) values(1,1);
+insert into staff_role(role_id,staff_id) values(2,2);
+insert into staff_role(role_id,staff_id) values(2,3);
+insert into staff_role(role_id,staff_id) values(2,4);
+insert into staff_role(role_id,staff_id) values(2,5);
+insert into staff_role(role_id,staff_id) values(2,6);
+
+-- Insert staff table
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values("admin", "admin123",
+0123456789,"admin@gmail.com","123 Lý Thường Kiệt, quận Bình Thạnh, TP HCM", 1, "1990-12-7");
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values('Đào Thị D', 'd123', '903241562', 
+'daothid@gmail.com', '50/36 Lê Thị Hồng, quận Gò Vấp, TP HCM', '2', '2000-02-20');
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values("Nguyễn Văn A", "a123",
+0987654321,"vanA123@gmail.com","20/223 Nguyễn Trãi, quận 3, TP HCM", 1, "1997-3-21");
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values("Nguyễn Thị C", "b123",
+0981237465,"nguyenvanB@gmail.com","111 Điện Biên Phủ, quận Bình Thạnh, TP HCM", 2, "1998-9-14");
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values("Phạm Thị O", "123123",
+0937821456,"phamthio@gmail.com","231 Nguyễn Oanh, quận Gò Vấp, TP HCM", 2, "1994-8-30");
+insert into staff(staff_name,password,phone_number,email,staff_address,gender,birthofday) values("Tran Tien T", "t123",
+0914562378,"trantient@gmail.com","34 Tiền Giang, quận Tân Bình, TP HCM", 1, "1992-10-16");
 	-- Insert product table
 insert into product(product_name,product_avatar,product_price,product_description,product_screen_type,product_screen_size,
 product_front_camere,product_back_camera,product_producer,product_type,product_status) values("Realme C3i", "realmeC3i.png",
@@ -383,4 +404,4 @@ select *
 from product 
 where product_type = 4 order by id DESC;
 END //
-call  GetProductByPhone();
+call  GetAllRoleByStaff();

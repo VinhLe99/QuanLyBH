@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.project.quanlybanhang_api.entity.Customer;
 import com.project.quanlybanhang_api.entity.StaffRoles;
 import com.project.quanlybanhang_api.respository.StaffRolesResponsitory;
 
